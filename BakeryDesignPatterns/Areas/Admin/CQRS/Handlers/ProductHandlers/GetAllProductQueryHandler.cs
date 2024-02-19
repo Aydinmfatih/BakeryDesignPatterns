@@ -19,10 +19,17 @@ namespace BakeryDesignPatterns.Areas.Admin.CQRS.Handlers.ProductHandlers
         }
         public List<GetAllProductQueryResult> Handle()
         {
-            var values = _productCollection.Find(x=>true).ToList();
-            var results = _mapper.Map<List<GetAllProductQueryResult>>(values);
+            var values = _productCollection.Find(x => true).ToList();
+            var results = values.Select(product => new GetAllProductQueryResult
+            {
+                ProductId = product.ProductId,
+                ProductName = product.ProductName,
+                ProductDescription = product.ProductDescription,
+                ProductPrice = product.ProductPrice
+            }).ToList();
+
             return results;
-          
+
         }
 
     }

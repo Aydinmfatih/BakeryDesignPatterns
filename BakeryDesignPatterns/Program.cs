@@ -1,3 +1,4 @@
+using BakeryDesignPatterns.Areas.Admin.CQRS.Handlers.ProductHandlers;
 using BakeryDesignPatterns.DAL.Settings;
 using Microsoft.Extensions.Options;
 using System.Reflection;
@@ -6,7 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddScoped<CreateProductQueryHandler>();
+builder.Services.AddScoped<DeleteProductCommandHandler>();
+builder.Services.AddScoped<GetAllProductQueryHandler>();
+builder.Services.AddScoped<GetProductByIdQueryHandler>();
+builder.Services.AddScoped<UpdateProductCommandHandler>();
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
 builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 {

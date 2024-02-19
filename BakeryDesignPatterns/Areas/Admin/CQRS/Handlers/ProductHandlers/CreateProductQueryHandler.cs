@@ -20,9 +20,14 @@ namespace BakeryDesignPatterns.Areas.Admin.CQRS.Handlers.ProductHandlers
         }
         public void Handle(CreateProductCommand command)
         {
-            var value = _mapper.Map<Product>(command);
-            _productCollection.InsertOne(value);
+            var value = new Product()
+            {
+                ProductName = command.ProductName,
+                ProductDescription = command.ProductDescription,
+                ProductPrice = command.ProductPrice
+            };
 
+            _productCollection.InsertOne(value);
 
         }
     }

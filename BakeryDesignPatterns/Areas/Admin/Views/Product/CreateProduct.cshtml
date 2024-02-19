@@ -1,0 +1,20 @@
+﻿@model BakeryDesignPatterns.Areas.Admin.CQRS.Commands.Product.CreateProductCommand
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Ürün Ekleme Sayfası</h1>
+
+<form method="post">
+    <label>Ürün Adı</label>
+    <input type="text" name="ProductName" class="form form-control" />
+    <br />
+    <label>Ürün Fiyatı</label>
+    <input type="number" name="ProductPrice" class="form form-control" />
+    <br />
+    <label>Ürün Açıklama</label>
+    <input type="text" name="ProductDescription" class="form form-control" />
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
