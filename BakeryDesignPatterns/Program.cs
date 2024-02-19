@@ -1,8 +1,9 @@
 using BakeryDesignPatterns.DAL.Settings;
 using Microsoft.Extensions.Options;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
