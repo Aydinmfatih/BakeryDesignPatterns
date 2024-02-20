@@ -24,6 +24,8 @@ namespace BakeryDesignPatterns.Areas.Admin.CQRS.Handlers.ProductHandlers
             {
                 ProductName = command.ProductName,
                 ProductDescription = command.ProductDescription,
+                ProductDescription = command.ProductDescription,
+                ProductDescription = command.ProductDescription,
                 ProductPrice = command.ProductPrice
             };
 
