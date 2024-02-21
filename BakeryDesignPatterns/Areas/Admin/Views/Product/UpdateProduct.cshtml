@@ -1,0 +1,21 @@
+﻿@model BakeryDesignPatterns.Areas.Admin.CQRS.Results.GetProductByIdQueryResult
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Ürün Güncelleme Sayfası</h1>
+
+<form method="post">
+    <input type="hidden" name="ProductId" />
+    <label>Ürün Adı</label>
+    <input type="text" name="ProductName" class="form form-control" />
+    <br />
+    <label>Ürün Fiyatı</label>
+    <input  type="number" name="ProductPrice" class="form form-control" />
+    <br />
+    <label>Ürün Açıklama</label>
+    <input type="text" name="ProductDescription" class="form form-control" />
+    <br />
+    <button class="btn btn-primary">Güncelle</button>
+</form>

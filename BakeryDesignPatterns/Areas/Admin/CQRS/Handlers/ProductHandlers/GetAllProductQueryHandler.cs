@@ -25,7 +25,8 @@ namespace BakeryDesignPatterns.Areas.Admin.CQRS.Handlers.ProductHandlers
                 ProductId = product.ProductId,
                 ProductName = product.ProductName,
                 ProductDescription = product.ProductDescription,
-                ProductPrice = product.ProductPrice
+                ProductPrice = product.ProductPrice,
+                ImageUrl = product.ImageUrl
             }).ToList();
 
             return results;

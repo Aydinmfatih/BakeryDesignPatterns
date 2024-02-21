@@ -22,8 +22,16 @@ namespace BakeryDesignPatterns.Areas.Admin.CQRS.Handlers.ProductHandlers
         public GetProductByIdQueryResult Handle(GetProductByIdQuery query)
         {
             var value = _productCollection.Find(x=>x.ProductId == query.Id).FirstOrDefault();
-            var result = _mapper.Map<GetProductByIdQueryResult>(value);
-            return result;
+
+            var results = new GetProductByIdQueryResult
+            {
+                ProductId = value.ProductId,
+                ProductName = value.ProductName,
+                ProductDescription = value.ProductDescription,
+                ProductPrice = value.ProductPrice,
+                ImageUrl = value.ImageUrl
+            };
+            return results;
         }
 
     }
